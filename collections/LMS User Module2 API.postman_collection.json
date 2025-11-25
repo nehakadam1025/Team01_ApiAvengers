@@ -1,0 +1,321 @@
+{
+	"info": {
+		"_postman_id": "e3eb2a1c-8d69-40e4-a7b4-ad2c75060ad6",
+		"name": "LMS-Users-Module2",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "49904469",
+		"_collection_link": "https://dishagupta1411-536017.postman.co/workspace/Disha_WS~b9d4ec54-c0e1-4413-8613-4d7fb2a0ba52/collection/49904469-e3eb2a1c-8d69-40e4-a7b4-ad2c75060ad6?action=share&source=collection_link&creator=49904469"
+	},
+	"item": [
+		{
+			"name": "Positive Tests",
+			"item": [
+				{
+					"name": "Get Users by ProgramID",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status is 200\", function () {",
+									"  pm.response.to.have.status(200);",
+									"});",
+									"",
+									"pm.test(\"Response is JSON array\", function () {",
+									"  pm.expect(pm.response.json()).to.be.an('array');",
+									"});",
+									"",
+									"pm.test(\"First user has userId and userFirstName\", function () {",
+									"  let res = pm.response.json();",
+									"  if (res.length > 0) {",
+									"    pm.expect(res[0]).to.have.property(\"userId\");",
+									"    pm.expect(res[0]).to.have.property(\"userFirstName\");",
+									"  } else {",
+									"    pm.skip(\"Response array is empty; nothing to assert in elements\");",
+									"  }",
+									"});",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/users/programs/1",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"users",
+								"programs",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "POST-LOGIN",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"let response = pm.response.json();",
+									"pm.collectionVariables.set(\"token\", response.token);",
+									"console.log(\"Saved token:\", response.token);",
+									"",
+									"pm.test(\"Status code is 200\", function () {",
+									"  pm.response.to.have.status(200);",
+									"});",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{authToken}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"userLoginEmailId\": \"team1@gmail.com\",\n  \"password\": \"ApiHackathon@2025\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/login",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Users By roleID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/users/roles/R03",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"users",
+								"roles",
+								"R03"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Gets Users by roleId V2",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/v2/users",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"v2",
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": ".Get User BatchId by User Id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/users/user/U04",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"users",
+								"user",
+								"U04"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get User Details by Id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/users/details/U01",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"users",
+								"details",
+								"U01"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update User By ID",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Negative Tests",
+			"item": [
+				{
+					"name": "Get Users For Program-Invalid",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/users/programs/999999",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"users",
+								"programs",
+								"999999"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Users By RoleId-Invalid",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/users/roles/R99",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"users",
+								"roles",
+								"R99"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": ".Get User BatchId by User Id-Invalid",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/users/user/U40",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"users",
+								"user",
+								"U40"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get User Details by Id-Invalid",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/users/details/U99",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"users",
+								"details",
+								"U99"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "{{token}}",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "authToken",
+			"value": ""
+		},
+		{
+			"key": "token",
+			"value": ""
+		}
+	]
+}
