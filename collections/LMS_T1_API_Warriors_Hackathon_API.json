@@ -41,12 +41,10 @@
 											"        pm.collectionVariables.set(\"authToken\", jsonData.token);\r",
 											"        console.log(\"Token saved: \" + jsonData.token);\r",
 											"    }\r",
-											"}\r",
-											""
+											"}"
 										],
 										"type": "text/javascript",
-										"packages": {},
-										"requests": {}
+										"packages": {}
 									}
 								}
 							],
@@ -5660,59 +5658,8 @@
 			"name": "User Module 2",
 			"item": [
 				{
-					"name": "Positive Tests",
+					"name": "Positive Tests Copy",
 					"item": [
-						{
-							"name": "POST-LOGIN",
-							"event": [
-								{
-									"listen": "test",
-									"script": {
-										"exec": [
-											"let response = pm.response.json();",
-											"pm.collectionVariables.set(\"token\", response.token);",
-											"console.log(\"Saved token:\", response.token);",
-											"",
-											"pm.test(\"Status code is 200\", function () {",
-											"  pm.response.to.have.status(200);",
-											"});",
-											""
-										],
-										"type": "text/javascript",
-										"packages": {}
-									}
-								}
-							],
-							"request": {
-								"method": "POST",
-								"header": [
-									{
-										"key": "Authorization",
-										"value": "Bearer {{authToken}}",
-										"type": "text"
-									}
-								],
-								"body": {
-									"mode": "raw",
-									"raw": "{\n  \"userLoginEmailId\": \"team1@gmail.com\",\n  \"password\": \"ApiHackathon@2025\"\n}",
-									"options": {
-										"raw": {
-											"language": "json"
-										}
-									}
-								},
-								"url": {
-									"raw": "{{baseUrl}}/login",
-									"host": [
-										"{{baseUrl}}"
-									],
-									"path": [
-										"login"
-									]
-								}
-							},
-							"response": []
-						},
 						{
 							"name": "Get Users by ProgramID",
 							"event": [
@@ -5807,7 +5754,13 @@
 							],
 							"request": {
 								"method": "GET",
-								"header": [],
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{authToken}}",
+										"type": "text"
+									}
+								],
 								"url": {
 									"raw": "{{baseUrl}}/users/programs/7",
 									"host": [
@@ -5926,7 +5879,13 @@
 							],
 							"request": {
 								"method": "GET",
-								"header": [],
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{authToken}}",
+										"type": "text"
+									}
+								],
 								"url": {
 									"raw": "{{baseUrl}}/users/roles/R03",
 									"host": [
@@ -6034,7 +5993,13 @@
 							],
 							"request": {
 								"method": "GET",
-								"header": [],
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{authToken}}",
+										"type": "text"
+									}
+								],
 								"url": {
 									"raw": "{{baseUrl}}/v2/users",
 									"host": [
@@ -6052,7 +6017,13 @@
 							"name": ".Get User BatchId by User Id",
 							"request": {
 								"method": "GET",
-								"header": [],
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{authToken}}",
+										"type": "text"
+									}
+								],
 								"url": {
 									"raw": "{{baseUrl}}/users/user/U04",
 									"host": [
@@ -6111,7 +6082,13 @@
 							],
 							"request": {
 								"method": "GET",
-								"header": [],
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{authToken}}",
+										"type": "text"
+									}
+								],
 								"url": {
 									"raw": "{{baseUrl}}/users/details/U10",
 									"host": [
@@ -6159,7 +6136,13 @@
 							],
 							"request": {
 								"method": "PUT",
-								"header": [],
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{authToken}}",
+										"type": "text"
+									}
+								],
 								"body": {
 									"mode": "raw",
 									"raw": "{\n\"userComments\": \"na\",\n\"userEduPg\": \"ME\",\n\"userEduUg\": \"BE\",\n\"userFirstName\": \"Shreya\",\n\"userId\": \"String\",\n\"userLastName\": \"Ghoshal\",\n\"userMiddleName\": \"Singh\",\n\"userLinkedinUrl\": \"https://www.linkedin.com/in/shreyaghoshal4/\",\n\"userLocation\": \"Dallas\",\n\"userLoginEmail\": \"Robert.Louis@gmail.com\" ,\n\"userPhoneNumber\": \"+91 3214568899\",\n\"userTimeZone\": \"CST\",\n\"userVisaStatus\": \"H4-EAD\"\n}",
@@ -6211,7 +6194,13 @@
 							],
 							"request": {
 								"method": "PUT",
-								"header": [],
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{authToken}}",
+										"type": "text"
+									}
+								],
 								"body": {
 									"mode": "raw",
 									"raw": "{\n\"userRoleList\": [\n{\n\"roleId\": \"R01\",\n\"userRoleStatus\": \"Active\"\n}\n]\n}",
@@ -6273,7 +6262,13 @@
 							],
 							"request": {
 								"method": "PUT",
-								"header": [],
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{authToken}}",
+										"type": "text"
+									}
+								],
 								"body": {
 									"mode": "raw",
 									"raw": "{\n\"programId\": 1,\n\"roleId\": \"R01\",\n\"userId\": \"U02\",\n\"userRoleProgramBatches\": [\n{\n\"batchId\":1,\n\"userRoleProgramBatchStatus\":\n\"Active\"\n}\n]\n}",
@@ -6301,7 +6296,13 @@
 							"name": "Update User Login Status",
 							"request": {
 								"method": "PUT",
-								"header": [],
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{authToken}}",
+										"type": "text"
+									}
+								],
 								"body": {
 									"mode": "raw",
 									"raw": "{\n\"loginStatus\": \"Active\",\n\"roleIds\": [\n\"R01\"\n],\n\"status\": \"Active\",\n\"userLoginEmail\": \"xyzabc@gmail.com\"\n}",
@@ -6350,7 +6351,13 @@
 							],
 							"request": {
 								"method": "DELETE",
-								"header": [],
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{authToken}}",
+										"type": "text"
+									}
+								],
 								"body": {
 									"mode": "raw",
 									"raw": ""
@@ -6371,13 +6378,19 @@
 					]
 				},
 				{
-					"name": "Negative Tests",
+					"name": "Negative Tests Copy",
 					"item": [
 						{
 							"name": "Get Users For Program-Invalid",
 							"request": {
 								"method": "GET",
-								"header": [],
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{authToken}}",
+										"type": "text"
+									}
+								],
 								"url": {
 									"raw": "{{baseUrl}}/users/programs/999999",
 									"host": [
@@ -6396,7 +6409,13 @@
 							"name": "Get Users By RoleId-Invalid",
 							"request": {
 								"method": "GET",
-								"header": [],
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{authToken}}",
+										"type": "text"
+									}
+								],
 								"url": {
 									"raw": "{{baseUrl}}/users/roles/R99",
 									"host": [
@@ -6415,7 +6434,13 @@
 							"name": ".Get User BatchId by User Id-Invalid",
 							"request": {
 								"method": "GET",
-								"header": [],
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{authToken}}",
+										"type": "text"
+									}
+								],
 								"url": {
 									"raw": "{{baseUrl}}/users/user/U40",
 									"host": [
@@ -6434,7 +6459,13 @@
 							"name": "Get User Details by Id-Invalid",
 							"request": {
 								"method": "GET",
-								"header": [],
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{authToken}}",
+										"type": "text"
+									}
+								],
 								"url": {
 									"raw": "{{baseUrl}}/users/details/U99",
 									"host": [
@@ -6488,7 +6519,13 @@
 							],
 							"request": {
 								"method": "PUT",
-								"header": [],
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{authToken}}",
+										"type": "text"
+									}
+								],
 								"body": {
 									"mode": "raw",
 									"raw": "{\n\"userComments\": \"na\",\n\"userEduPg\": \"ME\",\n\"userEduUg\": \"BE\",\n\"userId\": \"String\",\n\"userLastName\": \"Ghoshal\",\n\"userMiddleName\": \"Singh\",\n\"userLinkedinUrl\": \"https://www.linkedin.com/in/shreyaghoshal4/\",\n\"userPhoneNumber\": \"+91 3214567890\",\n\"userTimeZone\": \"CST\",\n\"userVisaStatus\": \"H4-EAD\"\n}",
@@ -6542,7 +6579,13 @@
 							],
 							"request": {
 								"method": "PUT",
-								"header": [],
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{authToken}}",
+										"type": "text"
+									}
+								],
 								"body": {
 									"mode": "raw",
 									"raw": "{\n\"userRoleList\": [\n{\n\"roleId\": \"R02\",\n\"userRoleStatus\": \"Active\"\n}\n]\n}",
@@ -6597,7 +6640,13 @@
 							],
 							"request": {
 								"method": "PUT",
-								"header": [],
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{authToken}}",
+										"type": "text"
+									}
+								],
 								"body": {
 									"mode": "raw",
 									"raw": "{\n\"userRoleList\": [\n{\n\"roleId\": \"R01\",\n\"userRoleStatus\": \"Active\"\n}\n]\n}",
@@ -6650,7 +6699,13 @@
 							],
 							"request": {
 								"method": "PUT",
-								"header": [],
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{authToken}}",
+										"type": "text"
+									}
+								],
 								"body": {
 									"mode": "raw",
 									"raw": "{\n\"programId\": 1,\n\"roleId\": \"R01\",\n\"userId\": \"U99\",\n\"userRoleProgramBatches\": [\n{\n\"batchId\":1,\n\"userRoleProgramBatchStatus\":\n\"Active\"\n}\n]\n}",
@@ -6711,7 +6766,13 @@
 							],
 							"request": {
 								"method": "PUT",
-								"header": [],
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{authToken}}",
+										"type": "text"
+									}
+								],
 								"body": {
 									"mode": "raw",
 									"raw": "{\n\"programId\": 1,\n\"roleId\": \"R01\",\n\"userId\": \"U99\",\n\"userRoleProgramBatches\": [\n{\n\"userRoleProgramBatchStatus\":\n\"Active\"\n}\n]\n}",
@@ -6739,7 +6800,13 @@
 							"name": "Update User Login Status-InValid",
 							"request": {
 								"method": "PUT",
-								"header": [],
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{authToken}}",
+										"type": "text"
+									}
+								],
 								"body": {
 									"mode": "raw",
 									"raw": "{\n\"loginStatus\": \"Active\",\n\"roleIds\": [\n\"R01\"\n],\n\"status\": \"Active\",\n\"userLoginEmail\": \"xyzabc@gmail.com\"\n}",
@@ -6767,7 +6834,13 @@
 							"name": "Update User Login Status-Missing",
 							"request": {
 								"method": "PUT",
-								"header": [],
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{authToken}}",
+										"type": "text"
+									}
+								],
 								"body": {
 									"mode": "raw",
 									"raw": "{\n\"loginStatus\": \"Active\",\n\"roleIds\": [\n\"R01\"\n],\n\"userLoginEmail\": \"xyzabc@gmail.com\"\n}",
@@ -6820,7 +6893,13 @@
 							],
 							"request": {
 								"method": "GET",
-								"header": [],
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{authToken}}",
+										"type": "text"
+									}
+								],
 								"url": {
 									"raw": "{{baseUrl}}/users/U999",
 									"host": [
