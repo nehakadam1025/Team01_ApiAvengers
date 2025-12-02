@@ -1,10 +1,10 @@
 {
 	"info": {
-		"_postman_id": "c2012c3d-a43c-43b0-9eb6-f72fa55c3175",
+		"_postman_id": "90e2ab3f-19fa-49ae-af03-bfed2be50eac",
 		"name": "LMS Hackathon",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-		"_exporter_id": "50024072",
-		"_collection_link": "https://nehak2025-2536606.postman.co/workspace/Neha's-Workspace~bd961bac-afb6-4a46-85fb-ee5e6c14829e/collection/50024072-c2012c3d-a43c-43b0-9eb6-f72fa55c3175?action=share&source=collection_link&creator=50024072"
+		"_exporter_id": "50244332",
+		"_collection_link": "https://saloniranka0303-4395223.postman.co/workspace/Saloni's-Workspace~c508e76f-3bd3-423c-8be0-4fb6ac1551a7/collection/50244332-90e2ab3f-19fa-49ae-af03-bfed2be50eac?action=share&source=collection_link&creator=50244332"
 	},
 	"item": [
 		{
@@ -2158,13 +2158,13 @@
 									"raw": "{\n  \"programName\": \"UpdatedProgram\",\n  \"programDescription\": \"Updated Description\",\n  \"programStatus\": \"Active\"\n}"
 								},
 								"url": {
-									"raw": "{{baseUrl}}/putprogram/99",
+									"raw": "{{baseUrl}}/putprogram/999",
 									"host": [
 										"{{baseUrl}}"
 									],
 									"path": [
 										"putprogram",
-										"99"
+										"999"
 									]
 								}
 							},

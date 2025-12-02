@@ -1,11 +1,11 @@
 {
 	"info": {
-		"_postman_id": "63fdfd46-601a-45aa-ae53-fab310196fa5",
+		"_postman_id": "dde0bead-140e-4178-97ac-600861405c21",
 		"name": "LMS Program Module API",
 		"description": "Comprehensive test collection for LMS Program Module APIs including all CRUD operations and validation tests",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
 		"_exporter_id": "50244332",
-		"_collection_link": "https://saloniranka0303-4395223.postman.co/workspace/Saloni's-Workspace~c508e76f-3bd3-423c-8be0-4fb6ac1551a7/collection/50244332-63fdfd46-601a-45aa-ae53-fab310196fa5?action=share&source=collection_link&creator=50244332"
+		"_collection_link": "https://saloniranka0303-4395223.postman.co/workspace/Saloni's-Workspace~c508e76f-3bd3-423c-8be0-4fb6ac1551a7/collection/50244332-dde0bead-140e-4178-97ac-600861405c21?action=share&source=collection_link&creator=50244332"
 	},
 	"item": [
 		{
@@ -1409,13 +1409,13 @@
 							"raw": "{\n  \"programName\": \"UpdatedProgram\",\n  \"programDescription\": \"Updated Description\",\n  \"programStatus\": \"Active\"\n}"
 						},
 						"url": {
-							"raw": "{{baseUrl}}/putprogram/99",
+							"raw": "{{baseUrl}}/putprogram/999",
 							"host": [
 								"{{baseUrl}}"
 							],
 							"path": [
 								"putprogram",
-								"99"
+								"999"
 							]
 						}
 					},
