@@ -1,10 +1,10 @@
 {
 	"info": {
-		"_postman_id": "e1139adc-df5c-45fc-9f7f-779078efa200",
+		"_postman_id": "4bcde6a1-9959-451a-9f10-b7ec7f982fd0",
 		"name": "LMS Hackathon",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-		"_exporter_id": "49904469",
-		"_collection_link": "https://dishagupta1411-536017.postman.co/workspace/Disha_WS~b9d4ec54-c0e1-4413-8613-4d7fb2a0ba52/collection/49904469-e1139adc-df5c-45fc-9f7f-779078efa200?action=share&source=collection_link&creator=49904469"
+		"_exporter_id": "50023977",
+		"_collection_link": "https://padmajak-suryawanshi-4740333.postman.co/workspace/Testing~fbf1ec08-9caa-4aab-ac93-b769f64d9538/collection/50023977-4bcde6a1-9959-451a-9f10-b7ec7f982fd0?action=share&source=collection_link&creator=50023977"
 	},
 	"item": [
 		{
@@ -150,7 +150,120 @@
 									]
 								}
 							},
-							"response": []
+							"response": [
+								{
+									"name": "Forgot Password Confirm Email",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Authorization",
+												"value": "Bearer {{authToken}}",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"userLoginEmailId\":\"team1@gmail.com\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/login/forgotpassword/confirmEmail",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"login",
+												"forgotpassword",
+												"confirmEmail"
+											]
+										}
+									},
+									"status": "Created",
+									"code": 201,
+									"_postman_previewlanguage": "",
+									"header": [
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, no-store, max-age=0, must-revalidate"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Date",
+											"value": "Tue, 02 Dec 2025 19:51:11 GMT"
+										},
+										{
+											"key": "Expires",
+											"value": "0"
+										},
+										{
+											"key": "Nel",
+											"value": "{\"report_to\":\"heroku-nel\",\"response_headers\":[\"Via\"],\"max_age\":3600,\"success_fraction\":0.01,\"failure_fraction\":0.1}"
+										},
+										{
+											"key": "Pragma",
+											"value": "no-cache"
+										},
+										{
+											"key": "Report-To",
+											"value": "{\"group\":\"heroku-nel\",\"endpoints\":[{\"url\":\"https://nel.heroku.com/reports?s=NPQDgt6vo2BzpC5a7Z7oRy8ync8zXRMbgzewpV3YXT8%3D\\u0026sid=c46efe9b-d3d2-4a0c-8c76-bfafa16c5add\\u0026ts=1764705070\"}],\"max_age\":3600}"
+										},
+										{
+											"key": "Reporting-Endpoints",
+											"value": "heroku-nel=\"https://nel.heroku.com/reports?s=NPQDgt6vo2BzpC5a7Z7oRy8ync8zXRMbgzewpV3YXT8%3D&sid=c46efe9b-d3d2-4a0c-8c76-bfafa16c5add&ts=1764705070\""
+										},
+										{
+											"key": "Server",
+											"value": "Heroku"
+										},
+										{
+											"key": "Strict-Transport-Security",
+											"value": "max-age=31536000 ; includeSubDomains"
+										},
+										{
+											"key": "Vary",
+											"value": "Origin"
+										},
+										{
+											"key": "Vary",
+											"value": "Access-Control-Request-Method"
+										},
+										{
+											"key": "Vary",
+											"value": "Access-Control-Request-Headers"
+										},
+										{
+											"key": "Via",
+											"value": "1.1 heroku-router"
+										},
+										{
+											"key": "X-Content-Type-Options",
+											"value": "nosniff"
+										},
+										{
+											"key": "X-Frame-Options",
+											"value": "DENY"
+										},
+										{
+											"key": "X-Xss-Protection",
+											"value": "0"
+										},
+										{
+											"key": "Content-Length",
+											"value": "366"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"token\": \"eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ0ZWFtMUBnbWFpbC5jb20iLCJpYXQiOjE3NjQ3MDUwNzAsImV4cCI6MTc2NDcxMjI3MH0.JJkR6tK33J7PEnWWH2XKGGqEo8bOIA79QlSNVa8A7GI_P8aad1JiZ3SO_QL1hK1cJSySUVqdfeHildhpMLrIFQ\",\n    \"type\": \"Bearer\",\n    \"userId\": \"U61\",\n    \"email\": \"team1@gmail.com\",\n    \"roles\": [\n        \"ROLE_ADMIN\",\n        \"ROLE_STAFF\"\n    ],\n    \"status\": \"Email sent to your registered email Id\",\n    \"passwordExpired\": false\n}"
+								}
+							]
 						}
 					]
 				},
@@ -7726,7 +7839,108 @@
 									]
 								}
 							},
-							"response": []
+							"response": [
+								{
+									"name": "Create New Skill",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n   \"skillName\": \"reading\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/SaveSkillMaster",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"SaveSkillMaster"
+											]
+										}
+									},
+									"status": "Unauthorized",
+									"code": 401,
+									"_postman_previewlanguage": "Text",
+									"header": [
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, no-store, max-age=0, must-revalidate"
+										},
+										{
+											"key": "Content-Length",
+											"value": "0"
+										},
+										{
+											"key": "Date",
+											"value": "Tue, 02 Dec 2025 19:48:25 GMT"
+										},
+										{
+											"key": "Expires",
+											"value": "0"
+										},
+										{
+											"key": "Nel",
+											"value": "{\"report_to\":\"heroku-nel\",\"response_headers\":[\"Via\"],\"max_age\":3600,\"success_fraction\":0.01,\"failure_fraction\":0.1}"
+										},
+										{
+											"key": "Pragma",
+											"value": "no-cache"
+										},
+										{
+											"key": "Report-To",
+											"value": "{\"group\":\"heroku-nel\",\"endpoints\":[{\"url\":\"https://nel.heroku.com/reports?s=8mh6IhSUXn4s0vGM5BIun3RK3R4zDw4dK6CSF1nEb8g%3D\\u0026sid=c46efe9b-d3d2-4a0c-8c76-bfafa16c5add\\u0026ts=1764704905\"}],\"max_age\":3600}"
+										},
+										{
+											"key": "Reporting-Endpoints",
+											"value": "heroku-nel=\"https://nel.heroku.com/reports?s=8mh6IhSUXn4s0vGM5BIun3RK3R4zDw4dK6CSF1nEb8g%3D&sid=c46efe9b-d3d2-4a0c-8c76-bfafa16c5add&ts=1764704905\""
+										},
+										{
+											"key": "Server",
+											"value": "Heroku"
+										},
+										{
+											"key": "Strict-Transport-Security",
+											"value": "max-age=31536000 ; includeSubDomains"
+										},
+										{
+											"key": "Vary",
+											"value": "Origin"
+										},
+										{
+											"key": "Vary",
+											"value": "Access-Control-Request-Method"
+										},
+										{
+											"key": "Vary",
+											"value": "Access-Control-Request-Headers"
+										},
+										{
+											"key": "Via",
+											"value": "1.1 heroku-router"
+										},
+										{
+											"key": "X-Content-Type-Options",
+											"value": "nosniff"
+										},
+										{
+											"key": "X-Frame-Options",
+											"value": "DENY"
+										},
+										{
+											"key": "X-Xss-Protection",
+											"value": "0"
+										}
+									],
+									"cookie": [],
+									"body": ""
+								}
+							]
 						},
 						{
 							"name": "Update Skill by skill id",
@@ -7845,7 +8059,10 @@
 											"\r",
 											"        // Optional: ensure creationTime is not after lastModTime\r",
 											"        pm.expect(c.getTime()).to.be.at.most(m.getTime());\r",
-											"\r",
+											" \t\r",
+											"\t\tpm.collectionVariables.set(\"testSkillName\", skill.skillName);\r",
+											"\t\tpm.collectionVariables.set(\"testSkillId\", skill.skillId);\r",
+											"        console.log(\"testSkillName saved: \" + skill.skillName);\r",
 											"\r",
 											"    });\r",
 											"});\r",
@@ -7980,7 +8197,7 @@
 									"variable": [
 										{
 											"key": "skillMasterName",
-											"value": "Python class2"
+											"value": "{{testSkillName}}"
 										}
 									]
 								}
@@ -8019,7 +8236,7 @@
 									"variable": [
 										{
 											"key": "id",
-											"value": "{{skillId}}"
+											"value": "{{testSkillId}}"
 										}
 									]
 								}
@@ -8390,6 +8607,14 @@
 		},
 		{
 			"key": "skillId",
+			"value": ""
+		},
+		{
+			"key": "testSkillName",
+			"value": ""
+		},
+		{
+			"key": "testSkillId",
 			"value": ""
 		}
 	]
